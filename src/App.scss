@@ -1,0 +1,40 @@
+.container{
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-container{
+    width: 90%;
+    margin-bottom: .5rem;
+}
+.form{
+    width: 100%;
+}
+
+input{
+    width: 100%;
+    height: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+
+.all-contacts{
+    width: 90%;
+}
+
+.contact{
+    border: 1px solid black;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.resolve{
+    color: green;
+}
+.reject{
+    color: red;
+}

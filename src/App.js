@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import React, { Component } from "react";
+import ContactForm from "./components/ContactForm";
+import AllContacts from "./components/AllContacts";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      contacts: [],
+    };
+  }
+
+  addContact = (contact)=>{
+    this.setState({
+      contacts:[...this.state.contacts, contact]
+    })
+  }
+
+  updateContactStatus = (index, status)=>{
+    const {contacts} = this.state
+
+    const updated_contacts = contacts.map((contact, idx)=>{
+    if(idx!==index) return contact
+    return {...contact, status: status}
+    })
+
+    this.setState({
+      contacts: updated_contacts
+    })    
+  }
+
+  render() {
+
+    return (
+      <div className="container">
+        <h1>Grievance Form</h1>
+        <ContactForm addContact={this.addContact}/>
+        <AllContacts contacts={this.state.contacts} updateContactStatus = {this.updateContactStatus} />
+      </div>
+    );
+  }
 }
-
-export default App;

@@ -37,7 +37,7 @@ export default class App extends Component {
       <div className="container">
         <h1>Grievance Form</h1>
         <ContactForm addContact={this.addContact}/>
-        <AllContacts contacts={this.state.contacts} updateContactStatus = {this.updateContactStatus} />
+        <AllContacts contacts={this.state.contacts} updateContactStatus={this.updateContactStatus} />
       </div>
     );
   }

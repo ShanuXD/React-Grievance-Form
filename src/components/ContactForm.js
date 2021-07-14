@@ -7,6 +7,9 @@ export default class ContactForm extends Component {
         const email = event.target.elements.email.value
         const title = event.target.elements.title.value
         const description = event.target.elements.description.value
+        event.target.elements.email.value = ""
+        event.target.elements.title.value = ""
+        event.target.elements.description.value = ""
 
         const contact ={
             email,
